@@ -40,12 +40,20 @@ class BookController extends Controller
 
     public function edit(Book $book)
     {
-        return inertia('Book/Edit');
+        return inertia('Book/Edit', ['book' => $book]);
     }
 
     public function update(Request $request, Book $book)
     {
-        //
+        $book->update(
+            $request->validate([
+                "name" => ["required", "min:3"],
+                "pages" => ["required"],
+                "author" => ["required"],
+            ])
+        );
+
+        return \Redirect::route('books.index');
     }
 
     public function destroy(Book $book)
