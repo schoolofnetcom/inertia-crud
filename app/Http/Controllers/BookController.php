@@ -21,7 +21,14 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        Book::create($request->all());
+        Book::create(
+            $request->validate([
+                "name" => ["required", "min:3"],
+                "pages" => ["required"],
+                "author" => ["required"],
+            ])
+        );
+
         return \Redirect::route('books.index');
     }
 

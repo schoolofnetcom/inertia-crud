@@ -3822,7 +3822,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 
@@ -3847,7 +3848,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Create = function Create() {
+  var errors = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.errors;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     name: '',
     pages: '',
@@ -3859,7 +3863,7 @@ var Create = function Create() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post(route('books.store'), data);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post(route('books.store'), data);
   }
 
   function handleInputChange(event) {
@@ -3867,7 +3871,6 @@ var Create = function Create() {
         name = _event$target.name,
         value = _event$target.value;
     setData(_objectSpread(_objectSpread({}, data), {}, _defineProperty({}, name, value)));
-    console.log(data);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
@@ -3884,6 +3887,9 @@ var Create = function Create() {
           type: "text",
           name: "name",
           onChange: handleInputChange
+        }), errors.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "text-red-500 text-xs italic mb-4",
+          children: errors.name
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "w-full px-3 mb-6 md:mb-0",
@@ -3895,6 +3901,9 @@ var Create = function Create() {
           type: "number",
           name: "pages",
           onChange: handleInputChange
+        }), errors.pages && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "text-red-500 text-xs italic mb-4",
+          children: errors.pages
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "w-full px-3 mb-6 md:mb-0",
@@ -3906,6 +3915,9 @@ var Create = function Create() {
           type: "text",
           name: "author",
           onChange: handleInputChange
+        }), errors.author && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "text-red-500 text-xs italic mb-4",
+          children: errors.author
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
         className: "px-3 ml-3 py-2 bg-green-400",
