@@ -4139,6 +4139,13 @@ var List = function List(_ref) {
                   }),
                   as: "button",
                   children: "Editar"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                  href: route('books.destroy', {
+                    book: book.id
+                  }),
+                  as: "button",
+                  method: "delete",
+                  children: "Remover"
                 })]
               })]
             }, book.id);

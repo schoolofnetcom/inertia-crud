@@ -48,6 +48,13 @@ const List = ({books}) => {
                                     <InertiaLink href={route('books.edit', { book: book.id })} as="button">
                                         Editar
                                     </InertiaLink>
+                                    <InertiaLink
+                                        href={route('books.destroy', { book: book.id })}
+                                        as="button"
+                                        method="delete"
+                                    >
+                                        Remover
+                                    </InertiaLink>
                                 </td>
                             </tr>
                         ))
