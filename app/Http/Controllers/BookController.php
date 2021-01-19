@@ -10,21 +10,37 @@ class BookController extends Controller
 {
     public function index()
     {
-        return @Inertia('Book/Index');
+        // return Inertia::render('');
+        return inertia('Book/List');
     }
 
     public function create()
     {
-        return @Inertia('Book/Create');
+        return inertia('Book/Create');
+    }
+
+    public function store(Request $request)
+    {
+        //
     }
 
     public function show(Book $book)
     {
-        return @Inertia('Book/Show');
+        return inertia('Book/Show');
     }
 
     public function edit(Book $book)
     {
-        return @Inertia('Book/Edit');
+        return inertia('Book/Edit');
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        //
+    }
+
+    public function destroy(Book $book)
+    {
+        //
     }
 }
