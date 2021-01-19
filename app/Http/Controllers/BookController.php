@@ -11,7 +11,8 @@ class BookController extends Controller
     public function index()
     {
         // return Inertia::render('');
-        return inertia('Book/List');
+        $books = Book::orderBy('id', 'desc')->paginate()->items();
+        return inertia('Book/List', ["books" => $books]);
     }
 
     public function create()
