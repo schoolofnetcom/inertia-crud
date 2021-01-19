@@ -35,7 +35,7 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        return inertia('Book/Show');
+        return inertia('Book/Show', ['book' => $book]);
     }
 
     public function edit(Book $book)
